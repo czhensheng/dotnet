@@ -1,0 +1,15 @@
+
+URL:http://www.cnblogs.com/haogj/archive/2012/02/17/2356537.html
+上下文启用迁移：Enable-Migrations
+迁移：
+Add-Migration “message”，将会基于你对模型的修改创建一个迁移的脚手架。
+Update-Database，将没有提交的修改提交到数据库
+
+Update-Database -Verbose 执行时可看到生成的SQL脚本 
+迁移文件中
+Up()方法中可直接写sql ：SQL("xx")
+
+迁移到特点的版本（包含降级）：
+Update-Database --TargetMigration:"message"（与上面的迁移的message是同一个）
+获取迁移的脚本：
+Update-Database -Script
